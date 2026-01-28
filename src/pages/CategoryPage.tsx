@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -17,6 +17,10 @@ const CategoryPage = () => {
 
   const categoryInfo = categoryId ? getCategoryInfo(categoryId) : null;
   const allGames = categoryId ? getGamesByCategory(categoryId) : [];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [categoryId]);
 
   // Filter games based on search and filters
   const filteredGames = useMemo(() => {
