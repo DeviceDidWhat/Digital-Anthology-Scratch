@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Rajasthani Color Palette */
+    --background: 42 35% 95%; /* Warm sand */
+    --foreground: 240 10% 15%; /* Deep charcoal */
+
+    --card: 40 40% 97%; /* Cream */
+    --card-foreground: 240 10% 15%;
+
+    --popover: 40 40% 97%;
+    --popover-foreground: 240 10% 15%;
+
+    /* Deep Indigo - Ajrakh inspired */
+    --primary: 230 60% 25%;
+    --primary-foreground: 42 35% 95%;
+
+    /* Warm Maroon - Bandhej inspired */
+    --secondary: 350 55% 35%;
+    --secondary-foreground: 42 35% 95%;
+
+    /* Mustard Yellow - Calls to action */
+    --mustard: 42 85% 55%;
+    --mustard-foreground: 240 10% 15%;
+
+    /* Peacock Green - Success/accent */
+    --peacock: 165 60% 35%;
+    --peacock-foreground: 42 35% 95%;
+
+    /* Terracotta Orange */
+    --terracotta: 20 70% 50%;
+    --terracotta-foreground: 42 35% 95%;
+
+    --muted: 40 25% 90%;
+    --muted-foreground: 240 10% 40%;
+
+    --accent: 42 85% 55%;
+    --accent-foreground: 240 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 30% 80%;
+    --input: 35 30% 85%;
+    --ring: 230 60% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(30 40% 85%) 0%, hsl(42 35% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(40 40% 97%) 0%, hsl(38 35% 93%) 100%);
+    --gradient-mustard: linear-gradient(135deg, hsl(42 85% 55%) 0%, hsl(38 80% 50%) 100%);
+    --gradient-indigo: linear-gradient(135deg, hsl(230 60% 25%) 0%, hsl(235 55% 20%) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(30 70% 70%) 0%, hsl(20 80% 60%) 50%, hsl(350 55% 35%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 40% 30% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(30 40% 30% / 0.2);
+    --shadow-lifted: 0 12px 40px -12px hsl(30 40% 30% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 230 60% 25%;
+    --sidebar-foreground: 42 35% 95%;
+    --sidebar-primary: 42 85% 55%;
+    --sidebar-primary-foreground: 240 10% 15%;
+    --sidebar-accent: 230 50% 35%;
+    --sidebar-accent-foreground: 42 35% 95%;
+    --sidebar-border: 230 40% 35%;
+    --sidebar-ring: 42 85% 55%;
+  }
+
+  .dark {
+    --background: 240 15% 10%;
+    --foreground: 42 35% 95%;
+    --card: 240 15% 13%;
+    --card-foreground: 42 35% 95%;
+    --popover: 240 15% 13%;
+    --popover-foreground: 42 35% 95%;
+    --primary: 42 85% 55%;
+    --primary-foreground: 240 10% 15%;
+    --secondary: 350 45% 45%;
+    --secondary-foreground: 42 35% 95%;
+    --muted: 240 15% 20%;
+    --muted-foreground: 42 25% 70%;
+    --accent: 165 60% 40%;
+    --accent-foreground: 240 10% 15%;
+    --border: 240 15% 25%;
+    --input: 240 15% 25%;
+    --ring: 42 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a574' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Ajrakh Pattern Border */
+  .ajrakh-border {
+    background-image: 
+      linear-gradient(90deg, hsl(230 60% 25%) 2px, transparent 2px),
+      linear-gradient(hsl(230 60% 25%) 2px, transparent 2px),
+      linear-gradient(90deg, hsl(230 60% 25% / 0.3) 1px, transparent 1px),
+      linear-gradient(hsl(230 60% 25% / 0.3) 1px, transparent 1px);
+    background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  }
+
+  /* Bandhani Dot Pattern */
+  .bandhani-pattern {
+    background-image: radial-gradient(circle, hsl(350 55% 35%) 2px, transparent 2px);
+    background-size: 16px 16px;
+  }
+
+  /* Jharokha Arch Shape */
+  .jharokha-arch {
+    clip-path: polygon(0 15%, 5% 5%, 20% 0, 80% 0, 95% 5%, 100% 15%, 100% 100%, 0 100%);
+  }
+
+  /* Scalloped Edge */
+  .scalloped-top {
+    --scallop-size: 12px;
+    mask-image: radial-gradient(circle at 50% 0, transparent var(--scallop-size), black var(--scallop-size));
+    mask-size: calc(var(--scallop-size) * 2.5) 100%;
+    mask-position: center top;
+  }
+
+  /* Decorative Card */
+  .card-rajasthani {
+    @apply relative bg-card rounded-xl overflow-hidden;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-rajasthani::before {
+    content: '';
+    @apply absolute inset-0 opacity-30 pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c4956a' fill-opacity='0.1'%3E%3Cpath d='M20 0L0 20h10L20 10l10 10h10z'/%3E%3Cpath d='M20 40L0 20h10l10 10 10-10h10z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Fabric Texture */
+  .fabric-texture {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  /* Button Embossed Effect */
+  .btn-embossed {
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 100% / 0.2),
+      inset 0 -2px 0 hsl(0 0% 0% / 0.1),
+      var(--shadow-soft);
+  }
+
+  /* Rangoli Progress */
+  .rangoli-progress {
+    background: conic-gradient(
+      hsl(42 85% 55%) 0deg,
+      hsl(350 55% 35%) 120deg,
+      hsl(165 60% 35%) 240deg,
+      hsl(42 85% 55%) 360deg
+    );
+  }
+}
+
+@layer utilities {
+  /* Decorative Corner Ornament */
+  .corner-ornament::before,
+  .corner-ornament::after {
+    content: '❋';
+    @apply absolute text-mustard opacity-60;
+    font-size: 1.25rem;
+  }
+  
+  .corner-ornament::before {
+    @apply top-2 left-2;
+  }
+  
+  .corner-ornament::after {
+    @apply bottom-2 right-2;
+  }
+
+  /* Text with decorative underline */
+  .text-decorated {
+    @apply relative inline-block;
+  }
+
+  .text-decorated::after {
+    content: '';
+    @apply absolute left-0 right-0 -bottom-1 h-0.5;
+    background: linear-gradient(90deg, transparent, hsl(42 85% 55%), transparent);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(42 85% 55% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(42 85% 55% / 0.5); }
+}
+
+@keyframes bandhani-ripple {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes fabric-fold {
+  0% { transform: perspective(500px) rotateX(0deg); }
+  50% { transform: perspective(500px) rotateX(-10deg); }
+  100% { transform: perspective(500px) rotateX(0deg); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes diya-glow {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 10px hsl(42 85% 55% / 0.5)); }
+  50% { filter: brightness(1.2) drop-shadow(0 0 20px hsl(42 85% 55% / 0.8)); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(42 85% 55% / 0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-diya {
+  animation: diya-glow 1.5s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+  @apply transition-all duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lifted);
+}
+
+.hover-fabric:hover {
+  animation: fabric-fold 0.4s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(40 25% 90%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(230 60% 25%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(230 55% 35%);
+}
