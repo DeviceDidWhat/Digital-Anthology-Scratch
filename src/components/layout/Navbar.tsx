@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
+
+  const handleExploreClick = () => {
+    const section = document.getElementById("categories");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-foreground/10">
       {/* Subtle pattern overlay */}
@@ -19,7 +24,7 @@ export const Navbar = () => {
         {/* Navigation Links - Desktop */}
         <div className="hidden md:flex items-center gap-8">
           <Link 
-            to="/categories" 
+            to="/" 
             className="text-primary-foreground/80 hover:text-mustard transition-colors relative group font-medium"
           >
             Explore Games
@@ -49,7 +54,12 @@ export const Navbar = () => {
           </button>
           
           {/* Profile/Start button */}
-          <Button variant="mustard" size="sm" className="hidden sm:flex">
+          <Button 
+            variant="mustard" 
+            size="sm" 
+            className="hidden sm:flex"
+            onClick={handleExploreClick}
+          >
             Start Learning
           </Button>
 
