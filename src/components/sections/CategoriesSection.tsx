@@ -42,7 +42,7 @@ const categories = [
     title: "Cuisine & Spices",
     description:
       "Master Dal Baati Churma, Ghewar, and the aromatic spices of royal kitchens",
-    gameCount: 4,
+    gameCount: 2,
     icon: "🍛",
     gradient: "bg-gradient-to-br from-mustard/90 to-terracotta/80",
     patternColor: "#4a3728",
@@ -51,7 +51,7 @@ const categories = [
     title: "Festivals & Traditions",
     description:
       "Celebrate Pushkar Mela, Teej, Gangaur, and vibrant Rajasthani celebrations",
-    gameCount: 4,
+    gameCount: 1,
     icon: "🎉",
     gradient: "bg-gradient-to-br from-secondary to-peacock/80",
     patternColor: "#fff5e6",

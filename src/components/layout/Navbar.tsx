@@ -37,21 +37,10 @@ export const Navbar = () => {
             About
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mustard transition-all group-hover:w-full" />
           </Link>
-          <Link 
-            to="/learn" 
-            className="text-primary-foreground/80 hover:text-mustard transition-colors relative group font-medium"
-          >
-            Learn More
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mustard transition-all group-hover:w-full" />
-          </Link>
         </div>
 
         {/* Right section */}
         <div className="flex items-center gap-4">
-          {/* Search button */}
-          <button className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-mustard/20 flex items-center justify-center transition-colors text-primary-foreground">
-            🔍
-          </button>
           
           {/* Profile/Start button */}
           <Button 
