@@ -91,7 +91,7 @@ const CategoryPage = () => {
             />
             
             <div className="mt-6 flex items-center gap-4 md:gap-6">
-              <span className="text-5xl md:text-7xl animate-float">
+              <span className="text-5xl md:text-7xl">
                 {categoryInfo.icon}
               </span>
               <div>

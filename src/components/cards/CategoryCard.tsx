@@ -73,7 +73,7 @@ export const CategoryCard = ({
         {/* Content */}
         <div className="relative z-10 p-6 md:p-8 text-white min-h-[280px] flex flex-col">
           {/* Icon */}
-          <div className="text-5xl mb-4 animate-float" style={{ animationDelay: `${delay * 0.5}s` }}>
+          <div className="text-5xl mb-4" style={{ animationDelay: `${delay * 0.5}s` }}>
             {icon}
           </div>
 
