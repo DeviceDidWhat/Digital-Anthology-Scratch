@@ -1,78 +1,48 @@
 import { DecorativeDivider } from "@/components/decorative/DecorativeDivider";
-
-const features = [
-  {
-    icon: "🎮",
-    title: "25+ Interactive Games",
-    description: "From memory matches to quizzes, puzzles to creative challenges"
-  },
-  {
-    icon: "📚",
-    title: "Authentic Learning",
-    description: "Content crafted with cultural experts and historians"
-  },
-  {
-    icon: "🏆",
-    title: "Earn Achievements",
-    description: "Collect badges and track your cultural knowledge journey"
-  },
-  {
-    icon: "👨‍👩‍👧‍👦",
-    title: "For All Ages",
-    description: "Suitable for ages 8+ with varying difficulty levels"
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/i18n/translations";
 
 export const FeaturesSection = () => {
+  const { language } = useLanguage();
+  const copy = getTranslations(language).features;
+
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
+    <section className="bg-gradient-to-b from-background to-muted/30 py-16 md:py-24">
       <div className="container mx-auto px-4">
-        {/* Section header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-display text-primary mb-4">
-            Why Learn with Us?
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 font-display text-3xl text-primary md:text-5xl">
+            {copy.title}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Experience Rajasthani heritage through joyful, engaging gameplay
+          <p className="mx-auto max-w-2xl text-muted-foreground">
+            {copy.description}
           </p>
         </div>
 
         <DecorativeDivider className="mb-12" />
 
-        {/* Features grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div 
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {copy.items.map((feature, index) => (
+            <div
               key={feature.title}
-              className="group text-center p-6 md:p-8 rounded-2xl bg-card shadow-soft hover-lift animate-fade-in"
+              className="group rounded-2xl bg-card p-6 text-center shadow-soft hover-lift animate-fade-in md:p-8"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Icon */}
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-mustard/20 to-terracotta/20 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform">
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-mustard/20 to-terracotta/20 text-4xl transition-transform group-hover:scale-110">
                 {feature.icon}
               </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-display text-primary mb-2 group-hover:text-mustard transition-colors">
+              <h3 className="mb-2 text-xl font-display text-primary transition-colors group-hover:text-mustard">
                 {feature.title}
               </h3>
-
-              {/* Description */}
-              <p className="text-muted-foreground text-sm">
-                {feature.description}
-              </p>
+              <p className="text-sm text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Cultural quote */}
         <div className="mt-16 text-center">
-          <blockquote className="text-2xl md:text-3xl font-display text-secondary italic max-w-3xl mx-auto">
+          <blockquote className="mx-auto max-w-3xl font-display text-2xl italic text-secondary md:text-3xl">
             "पधारो म्हारे देश"
           </blockquote>
-          <p className="text-muted-foreground mt-2">
-            — Welcome to our land
-          </p>
+          <p className="mt-2 text-muted-foreground">- {copy.quoteLabel}</p>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/i18n/translations";
 
 interface CategoryFiltersProps {
   searchQuery: string;
@@ -11,18 +11,6 @@ interface CategoryFiltersProps {
   onTimeChange: (time: string | null) => void;
 }
 
-const difficultyOptions = [
-  { value: 'easy', label: 'Easy', icon: '✦' },
-  { value: 'medium', label: 'Medium', icon: '✦✦' },
-  { value: 'hard', label: 'Hard', icon: '✦✦✦' },
-];
-
-const timeOptions = [
-  { value: 'quick', label: '< 7 min', icon: '⚡' },
-  { value: 'medium', label: '7-10 min', icon: '⏱️' },
-  { value: 'long', label: '10+ min', icon: '🕐' },
-];
-
 export const CategoryFilters = ({
   searchQuery,
   onSearchChange,
@@ -31,24 +19,39 @@ export const CategoryFilters = ({
   selectedTime,
   onTimeChange,
 }: CategoryFiltersProps) => {
+  const { language } = useLanguage();
+  const copy = getTranslations(language).filters;
+
+  const difficultyOptions = [
+    { value: "easy", label: copy.difficultyOptions.easy, icon: "✦" },
+    { value: "medium", label: copy.difficultyOptions.medium, icon: "✦✦" },
+    { value: "hard", label: copy.difficultyOptions.hard, icon: "✦✦✦" },
+  ];
+
+  const timeOptions = [
+    { value: "quick", label: copy.timeOptions.quick, icon: "⚡" },
+    { value: "medium", label: copy.timeOptions.medium, icon: "⏱️" },
+    { value: "long", label: copy.timeOptions.long, icon: "🕐" },
+  ];
+
   return (
     <div className="space-y-4">
-      {/* Search bar with decorative border */}
       <div className="relative">
-        <div className="absolute inset-0 bg-primary/5 rounded-xl -m-1" />
-        <div className="relative flex items-center gap-2 bg-card border-2 border-border rounded-lg px-4 py-2 focus-within:border-mustard transition-colors">
+        <div className="absolute inset-0 -m-1 rounded-xl bg-primary/5" />
+        <div className="relative flex items-center gap-2 rounded-lg border-2 border-border bg-card px-4 py-2 transition-colors focus-within:border-mustard">
           <span className="text-xl">🔍</span>
           <Input
             type="text"
-            placeholder="Search games..."
+            placeholder={copy.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-0 placeholder:text-muted-foreground/60"
+            className="border-0 bg-transparent px-0 placeholder:text-muted-foreground/60 focus-visible:ring-0 focus-visible:ring-offset-0"
           />
           {searchQuery && (
-            <button 
-              onClick={() => onSearchChange('')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+            <button
+              type="button"
+              onClick={() => onSearchChange("")}
+              className="text-muted-foreground transition-colors hover:text-foreground"
             >
               ✕
             </button>
@@ -56,23 +59,26 @@ export const CategoryFilters = ({
         </div>
       </div>
 
-      {/* Filter chips */}
       <div className="flex flex-wrap gap-3">
-        {/* Difficulty filters */}
         <div className="flex items-center gap-2">
-          <span className="text-sm text-muted-foreground font-medium">Difficulty:</span>
+          <span className="text-sm font-medium text-muted-foreground">
+            {copy.difficulty}
+          </span>
           <div className="flex gap-1.5">
             {difficultyOptions.map((option) => (
               <button
                 key={option.value}
-                onClick={() => onDifficultyChange(selectedDifficulty === option.value ? null : option.value)}
-                className={`
-                  px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200
-                  ${selectedDifficulty === option.value 
-                    ? 'bg-mustard text-mustard-foreground shadow-md scale-105' 
-                    : 'bg-card border border-border text-muted-foreground hover:border-mustard hover:text-foreground'
-                  }
-                `}
+                type="button"
+                onClick={() =>
+                  onDifficultyChange(
+                    selectedDifficulty === option.value ? null : option.value,
+                  )
+                }
+                className={`rounded-full px-3 py-1.5 text-sm font-medium transition-all duration-200 ${
+                  selectedDifficulty === option.value
+                    ? "scale-105 bg-mustard text-mustard-foreground shadow-md"
+                    : "border border-border bg-card text-muted-foreground hover:border-mustard hover:text-foreground"
+                }`}
               >
                 <span className="mr-1 text-xs">{option.icon}</span>
                 {option.label}
@@ -81,24 +87,25 @@ export const CategoryFilters = ({
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="hidden sm:block w-px bg-border self-stretch" />
+        <div className="hidden w-px self-stretch bg-border sm:block" />
 
-        {/* Time filters */}
         <div className="flex items-center gap-2">
-          <span className="text-sm text-muted-foreground font-medium">Time:</span>
+          <span className="text-sm font-medium text-muted-foreground">
+            {copy.time}
+          </span>
           <div className="flex gap-1.5">
             {timeOptions.map((option) => (
               <button
                 key={option.value}
-                onClick={() => onTimeChange(selectedTime === option.value ? null : option.value)}
-                className={`
-                  px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200
-                  ${selectedTime === option.value 
-                    ? 'bg-peacock text-peacock-foreground shadow-md scale-105' 
-                    : 'bg-card border border-border text-muted-foreground hover:border-peacock hover:text-foreground'
-                  }
-                `}
+                type="button"
+                onClick={() =>
+                  onTimeChange(selectedTime === option.value ? null : option.value)
+                }
+                className={`rounded-full px-3 py-1.5 text-sm font-medium transition-all duration-200 ${
+                  selectedTime === option.value
+                    ? "scale-105 bg-peacock text-peacock-foreground shadow-md"
+                    : "border border-border bg-card text-muted-foreground hover:border-peacock hover:text-foreground"
+                }`}
               >
                 <span className="mr-1">{option.icon}</span>
                 {option.label}
@@ -107,17 +114,17 @@ export const CategoryFilters = ({
           </div>
         </div>
 
-        {/* Clear all button */}
         {(selectedDifficulty || selectedTime || searchQuery) && (
           <button
+            type="button"
             onClick={() => {
               onDifficultyChange(null);
               onTimeChange(null);
-              onSearchChange('');
+              onSearchChange("");
             }}
-            className="px-3 py-1.5 rounded-full text-sm font-medium text-secondary hover:bg-secondary/10 transition-colors"
+            className="rounded-full px-3 py-1.5 text-sm font-medium text-secondary transition-colors hover:bg-secondary/10"
           >
-            Clear all ✕
+            {copy.clearAll} ✕
           </button>
         )}
       </div>
