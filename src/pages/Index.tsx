@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CategoriesSection } from "@/components/sections/CategoriesSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
+import { ScratchGamesSection } from "@/components/sections/ScratchGamesSection";
 
 const Index = () => {
   useLayoutEffect(() => {
@@ -23,6 +24,7 @@ const Index = () => {
       <main className="flex-1 pt-16">
         <HeroSection />
         <CategoriesSection />
+        <ScratchGamesSection />
         <FeaturesSection />
       </main>
 

@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
-import type { Game } from "@/data/games";
 
-interface GameCardProps extends Game {
+interface GameCardProps {
+  title: string;
+  description: string;
+  difficulty: "easy" | "medium" | "hard";
+  playTime: number;
+  icon: string;
+  gradient: string;
+  patternColor: string;
+  externalUrl?: string;
+  badgeLabel?: string;
   delay?: number;
 }
 
@@ -30,6 +38,7 @@ export const GameCard = ({
   gradient,
   patternColor,
   externalUrl,
+  badgeLabel,
   delay = 0 
 }: GameCardProps) => {
   const handlePlayClick = () => {
@@ -69,6 +78,12 @@ export const GameCard = ({
 
       {/* Content */}
       <div className="p-5">
+        {badgeLabel && (
+          <div className="mb-3 inline-flex items-center rounded-full bg-mustard/15 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-mustard">
+            {badgeLabel}
+          </div>
+        )}
+
         <h3 className="font-display text-xl text-primary mb-2 group-hover:text-secondary transition-colors">
           {title}
         </h3>
