@@ -6,6 +6,7 @@ export const translations = {
       brand: "Rangilo Rajasthan",
       exploreGames: "Explore Games",
       about: "About",
+      contributors: "Contributors",
       startLearning: "Start Learning",
       language: "Language",
       english: "EN",
@@ -67,6 +68,7 @@ export const translations = {
       categories: "Categories",
       quickLinks: "Quick Links",
       aboutUs: "About Us",
+      contributors: "Contributors",
       contact: "Contact",
       culturalNoteTitle: "Padharo Mhare Desh",
       culturalNote:
@@ -145,6 +147,35 @@ export const translations = {
       ],
       footer: "© 2026 Rangilo Rajasthan • IIT Jodhpur Project",
     },
+    contributorsPage: {
+      badge: "Project Team",
+      title: "Mentors and Contributors",
+      subtitle:
+        "Meet the people who shaped the concept, design, content, and development behind Rangilo Rajasthan.",
+      instituteLabel: "IIT Jodhpur Digital Initiative",
+      instituteTitle: "About IIT Jodhpur and This Digital Anthology",
+      instituteDescription:
+        "Rangilo Rajasthan is presented as a digital initiative shaped within the IIT Jodhpur ecosystem. Through student contribution, faculty mentorship, interactive design, and Scratch-based experimentation, the project turns cultural storytelling into a playful digital anthology rooted in learning, creativity, and heritage.",
+      instituteDescription2:
+        "The platform reflects an approach where technology is used not only to build software, but also to preserve culture, encourage exploration, and make Rajasthan's traditions accessible in an engaging form for modern learners.",
+      overviewTitle: "About This Team Page",
+      overviewDescription:
+        "This page is designed to highlight the individuals who contributed to the project, along with mentors who guided the direction, quality, and educational focus of the work.",
+      mentorsTitle: "Mentors",
+      mentorsDescription:
+        "Faculty members, guides, or project advisors who supported the team with direction and review.",
+      contributorsTitle: "Contributors",
+      contributorsDescription:
+        "Core project members involved in building, designing, researching, or organizing the platform.",
+      detailLabel: "Focus Area",
+      affiliationLabel: "Affiliation",
+      emailLabel: "Email",
+      phoneLabel: "Phone",
+      educationLabel: "Academic Background",
+      noteTitle: "Update This Page",
+      noteDescription:
+        "Replace the placeholder names and descriptions in the team data file with the actual contributor and mentor details for your project.",
+    },
     notFound: {
       greeting: "Padhare Sa!",
       title: "Lost in the Golden Sands?",
@@ -158,6 +189,7 @@ export const translations = {
       brand: "रंगीला राजस्थान",
       exploreGames: "गेम्स देखें",
       about: "परिचय",
+      contributors: "योगदानकर्ता",
       startLearning: "सीखना शुरू करें",
       language: "भाषा",
       english: "EN",
@@ -220,6 +252,7 @@ export const translations = {
       categories: "श्रेणियां",
       quickLinks: "त्वरित लिंक",
       aboutUs: "हमारे बारे में",
+      contributors: "योगदानकर्ता",
       contact: "संपर्क",
       culturalNoteTitle: "पधारो म्हारे देश",
       culturalNote:
@@ -297,6 +330,35 @@ export const translations = {
         { label: "रेटिंग", val: "4.9★", icon: "⭐" },
       ],
       footer: "© 2026 रंगीला राजस्थान • आईआईटी जोधपुर परियोजना",
+    },
+    contributorsPage: {
+      badge: "परियोजना टीम",
+      title: "मार्गदर्शक और योगदानकर्ता",
+      subtitle:
+        "रंगीला राजस्थान के विचार, डिज़ाइन, सामग्री और विकास में योगदान देने वाले लोगों से मिलिए।",
+      instituteLabel: "आईआईटी जोधपुर डिजिटल पहल",
+      instituteTitle: "आईआईटी जोधपुर और इस डिजिटल एंथोलॉजी के बारे में",
+      instituteDescription:
+        "रंगीला राजस्थान को आईआईटी जोधपुर से जुड़ी एक डिजिटल पहल के रूप में प्रस्तुत किया गया है। छात्र योगदान, फैकल्टी मार्गदर्शन, इंटरैक्टिव डिज़ाइन और स्क्रैच-आधारित प्रयोगों के माध्यम से यह परियोजना सांस्कृतिक कहानी कहने को सीख, रचनात्मकता और विरासत से जुड़ी एक रोचक डिजिटल एंथोलॉजी में बदल देती है।",
+      instituteDescription2:
+        "यह प्लेटफ़ॉर्म इस विचार को दर्शाता है कि तकनीक केवल सॉफ़्टवेयर बनाने का साधन नहीं है, बल्कि संस्कृति को संरक्षित करने, खोज को प्रोत्साहित करने और राजस्थान की परंपराओं को आधुनिक शिक्षार्थियों के लिए आकर्षक रूप में प्रस्तुत करने का माध्यम भी है।",
+      overviewTitle: "इस टीम पेज के बारे में",
+      overviewDescription:
+        "यह पेज उन लोगों को सामने लाने के लिए बनाया गया है जिन्होंने इस परियोजना में योगदान दिया, साथ ही उन मार्गदर्शकों को भी जो दिशा, गुणवत्ता और शैक्षिक दृष्टि प्रदान करते रहे।",
+      mentorsTitle: "मार्गदर्शक",
+      mentorsDescription:
+        "फैकल्टी सदस्य, गाइड या प्रोजेक्ट सलाहकार जिन्होंने टीम को दिशा और समीक्षा दी।",
+      contributorsTitle: "योगदानकर्ता",
+      contributorsDescription:
+        "वे मुख्य सदस्य जिन्होंने प्लेटफ़ॉर्म के निर्माण, डिज़ाइन, शोध या समन्वय में काम किया।",
+      detailLabel: "मुख्य कार्यक्षेत्र",
+      affiliationLabel: "संस्थान / संबद्धता",
+      emailLabel: "ईमेल",
+      phoneLabel: "फ़ोन",
+      educationLabel: "शैक्षणिक पृष्ठभूमि",
+      noteTitle: "इस पेज को अपडेट करें",
+      noteDescription:
+        "अपने प्रोजेक्ट के वास्तविक योगदानकर्ता और मार्गदर्शक विवरण जोड़ने के लिए टीम डेटा फ़ाइल में दिए गए प्लेसहोल्डर नाम और विवरण बदलें।",
     },
     notFound: {
       greeting: "पधारे सा!",

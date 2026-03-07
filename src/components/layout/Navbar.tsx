@@ -39,6 +39,13 @@ export const Navbar = () => {
             {copy.about}
             <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-mustard transition-all group-hover:w-full" />
           </Link>
+          <Link
+            to="/contributors"
+            className="group relative font-medium text-primary-foreground/80 transition-colors hover:text-mustard"
+          >
+            {copy.contributors}
+            <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-mustard transition-all group-hover:w-full" />
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">

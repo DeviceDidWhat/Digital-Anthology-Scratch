@@ -60,6 +60,14 @@ export const Footer = () => {
                   {copy.aboutUs}
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/contributors"
+                  className="text-primary-foreground/70 transition-colors hover:text-mustard"
+                >
+                  {copy.contributors}
+                </Link>
+              </li>
             </ul>
           </div>
 
