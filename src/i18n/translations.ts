@@ -26,7 +26,7 @@ export const translations = {
         "Dive into six vibrant categories, each filled with interactive games that bring Rajasthani culture to life",
     },
     scratchSection: {
-      title: "Scratch Games",
+      title: "STEM GAMES",
       description:
         "Play Scratch projects directly from the homepage alongside the rest of the anthology.",
       badge: "Scratch",
@@ -210,7 +210,7 @@ export const translations = {
         "छह जीवंत श्रेणियों में उतरिए, जहां इंटरैक्टिव गेम्स राजस्थान की संस्कृति को जीवंत बनाते हैं",
     },
     scratchSection: {
-      title: "स्क्रैच गेम्स",
+      title: "विज्ञान, प्रौद्योगिकी, अभियांत्रिकी एवं गणित गेम्स",
       description:
         "होमपेज से ही स्क्रैच प्रोजेक्ट्स खेलिए और एंथोलॉजी के बाकी अनुभवों के साथ उन्हें भी खोजिए।",
       badge: "स्क्रैच",
