@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslations } from "@/i18n/translations";
+import iitLogo from "@/assets/iitj-logo.jpg";
 
 export const Navbar = () => {
   const { language, setLanguage } = useLanguage();
   const copy = getTranslations(language).navbar;
-
+  
   const handleExploreClick = () => {
     const section = document.getElementById("categories");
     section?.scrollIntoView({ behavior: "smooth" });
@@ -18,7 +19,11 @@ export const Navbar = () => {
 
       <nav className="relative container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="group flex items-center gap-2">
-          <span className="text-2xl animate-diya">🪔</span>
+          <img
+            src={iitLogo}
+            alt="IIT Jodhpur"
+            className="h-10 w-auto transition-transform group-hover:scale-110"
+          />
           <span className="font-display text-xl text-primary-foreground transition-colors group-hover:text-mustard md:text-2xl">
             {copy.brand}
           </span>

@@ -166,7 +166,8 @@ export const translations = {
         "Faculty members, guides, or project advisors who supported the team with direction and review.",
       contributorsTitle: "Contributors",
       contributorsDescription:
-        "Core project members involved in building, designing, researching, or organizing the platform.",
+        "Core project members involved in building, designing, researching and organizing the platform.",
+      funFactLabel: "Fun Fact",
       detailLabel: "Focus Area",
       affiliationLabel: "Affiliation",
       emailLabel: "Email",
@@ -351,6 +352,7 @@ export const translations = {
       contributorsTitle: "योगदानकर्ता",
       contributorsDescription:
         "वे मुख्य सदस्य जिन्होंने प्लेटफ़ॉर्म के निर्माण, डिज़ाइन, शोध या समन्वय में काम किया।",
+      funFactLabel: "रोचक तथ्य",
       detailLabel: "मुख्य कार्यक्षेत्र",
       affiliationLabel: "संस्थान / संबद्धता",
       emailLabel: "ईमेल",

@@ -162,12 +162,12 @@ const ContributorsPage = () => {
               <motion.article
                 key={`${member.name}-${index}`}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1,y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="rounded-3xl border border-border bg-white p-8 shadow-soft"
               >
-                <div className="mb-4 h-16 w-16 rounded-full bg-gradient-to-br from-primary/20 to-mustard/30" />
+                {/* <div className="mb-4 h-16 w-16 rounded-full bg-gradient-to-br from-primary/20 to-mustard/30" /> */}
                 <h3 className="mb-2 font-display text-2xl text-primary">
                   {member.name}
                 </h3>
@@ -178,6 +178,14 @@ const ContributorsPage = () => {
                   {getLocalizedValue(language, member.bio, member.bioHi)}
                 </p>
                 <div className="space-y-2 text-sm">
+                  {/* {member.funFact && (
+                    <p>
+                      <span className="font-semibold text-primary">
+                        {copy.funFactLabel}:{" "}
+                      </span>
+                      <span className="text-foreground/70">{member.funFact}</span>
+                    </p>
+                  )} */}
                   <p>
                     <span className="font-semibold text-primary">
                       {copy.detailLabel}:{" "}
